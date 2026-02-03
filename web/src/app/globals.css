@@ -1,0 +1,48 @@
+:root {
+  color-scheme: light;
+  --sand: #f6e8cc;
+  --parchment: #f0d9b3;
+  --clay: #b46a3c;
+  --copper: #8d3f24;
+  --ink: #2b1a12;
+  --sky: #8ab1b7;
+  --sage: #7a8f6b;
+  --sunset: #e4a05b;
+  --brass: #c6a35a;
+  --shadow: 0 20px 40px rgba(43, 26, 18, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #f8eed8 0%, var(--sand) 40%, #e7c79a 100%);
+  font-family: var(--font-body), "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
