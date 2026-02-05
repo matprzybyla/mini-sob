@@ -210,6 +210,16 @@
   box-shadow: 0 12px 30px rgba(43, 26, 18, 0.15);
 }
 
+.menuCardLink {
+  display: grid;
+  gap: 8px;
+  color: inherit;
+}
+
+.menuCardLink:hover h3 {
+  color: var(--copper);
+}
+
 .menuCard h3 {
   font-family: var(--font-display), "Georgia", serif;
   font-size: 1.2rem;

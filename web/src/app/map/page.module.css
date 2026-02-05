@@ -1,0 +1,135 @@
+.page {
+  min-height: 100vh;
+  padding: 32px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--copper);
+}
+
+.title {
+  font-family: var(--font-display), "Georgia", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: rgba(43, 26, 18, 0.75);
+  max-width: 52ch;
+}
+
+.headerActions {
+  display: flex;
+  gap: 12px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(43, 26, 18, 0.35);
+  background: rgba(246, 232, 204, 0.8);
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(246, 232, 204, 0.75);
+  border: 1px solid rgba(180, 106, 60, 0.3);
+  box-shadow: var(--shadow);
+}
+
+.zoomButtons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controlButton,
+.controlGhost {
+  border-radius: 999px;
+  padding: 8px 16px;
+  border: 1px solid rgba(43, 26, 18, 0.4);
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(120deg, rgba(198, 163, 90, 0.4), rgba(228, 160, 91, 0.35));
+}
+
+.controlGhost {
+  background: transparent;
+}
+
+.zoomSliderLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.zoomSlider {
+  flex: 1;
+}
+
+.mapShell {
+  display: flex;
+  flex: 1;
+  min-height: clamp(360px, 70vh, 760px);
+}
+
+.mapScroller {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(141, 63, 36, 0.35);
+  background: rgba(240, 217, 179, 0.7);
+  box-shadow: var(--shadow);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+}
+
+.mapSizer {
+  width: 100%;
+}
+
+.mapImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .controls {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .zoomSliderLabel {
+    min-width: 320px;
+  }
+}

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 
-const menuItems = ["Campaign", "Missions", "Rules", "About"];
+const menuItems = ["Campaign", "Missions", "Map", "Rules", "About"];
 
 export default function Home() {
   return (
@@ -22,6 +22,15 @@ export default function Home() {
                 return (
                   <li key={item}>
                     <Link className={styles.navLink} href="/missions">
+                      {item}
+                    </Link>
+                  </li>
+                );
+              }
+              if (item === "Map") {
+                return (
+                  <li key={item}>
+                    <Link className={styles.navLink} href="/map">
                       {item}
                     </Link>
                   </li>
@@ -75,21 +84,41 @@ export default function Home() {
         </section>
 
         <section className={styles.menuGrid}>
-          {menuItems.map((item) => (
-            <article className={styles.menuCard} id={item.toLowerCase()} key={item}>
-              <h3>{item}</h3>
-              <p>
-                {item === "Campaign" &&
-                  "Track your party, world state, and chapter beats in one place."}
-                {item === "Missions" &&
-                  "Review open jobs, bounties, and side trails before the posse rides."}
-                {item === "Rules" &&
-                  "Quick reference for core mechanics, travel, and frontier hazards."}
-                {item === "About" &&
-                  "Meet the setting, tone, and safety tools shaping the campaign."}
-              </p>
-            </article>
-          ))}
+          {menuItems.map((item) => {
+            const content = (
+              <>
+                <h3>{item}</h3>
+                <p>
+                  {item === "Campaign" &&
+                    "Track your party, world state, and chapter beats in one place."}
+                  {item === "Missions" &&
+                    "Review open jobs, bounties, and side trails before the posse rides."}
+                  {item === "Map" &&
+                    "Open the hex map for travel planning, touch panning, and quick zoom."}
+                  {item === "Rules" &&
+                    "Quick reference for core mechanics, travel, and frontier hazards."}
+                  {item === "About" &&
+                    "Meet the setting, tone, and safety tools shaping the campaign."}
+                </p>
+              </>
+            );
+
+            if (item === "Map") {
+              return (
+                <article className={styles.menuCard} key={item}>
+                  <Link className={styles.menuCardLink} href="/map">
+                    {content}
+                  </Link>
+                </article>
+              );
+            }
+
+            return (
+              <article className={styles.menuCard} id={item.toLowerCase()} key={item}>
+                {content}
+              </article>
+            );
+          })}
         </section>
       </main>
     </div>
