@@ -22,8 +22,15 @@
 .header {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 14px;
   animation: rise 0.9s ease-out both;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
 }
 
 .brand {
@@ -48,34 +55,72 @@
 }
 
 .brandTagline {
+  display: none;
   font-size: 1rem;
   max-width: 36ch;
   color: rgba(43, 26, 18, 0.75);
 }
 
+.menuToggle {
+  width: 58px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent url("/ui/hamburger-sign.png") center / contain no-repeat;
+  color: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 5px 10px rgba(43, 26, 18, 0.25));
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.menuToggleIcon {
+  display: none;
+}
+
 .nav {
+  display: none;
+  width: 100%;
   background: rgba(246, 232, 204, 0.8);
   border: 1px solid rgba(180, 106, 60, 0.35);
   border-radius: 20px;
-  padding: 12px 14px;
+  padding: 6px 14px;
   box-shadow: var(--shadow);
+}
+
+.nav[data-open="true"] {
+  display: block;
 }
 
 .navList {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: none;
+  flex-direction: column;
   gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.navList[data-open="true"] {
+  display: flex;
+}
+
+.navList li {
+  margin: 3px 0;
 }
 
 .navLink {
   display: block;
-  text-align: center;
-  padding: 10px 12px;
+  text-align: left;
+  padding: 5px 12px;
   border-radius: 14px;
   background: linear-gradient(120deg, rgba(198, 163, 90, 0.4), rgba(228, 160, 91, 0.35));
   border: 1px solid rgba(141, 63, 36, 0.4);
   font-weight: 600;
+  white-space: nowrap;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -112,7 +157,6 @@
 }
 
 .heroTitle {
-  font-size: clamp(1.9rem, 5vw, 2.8rem);
   font-family: var(--font-display), "Georgia", serif;
 }
 
@@ -130,6 +174,12 @@
 
 .primaryButton,
 .secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 36px;
+  line-height: 1.1;
   border-radius: 999px;
   padding: 10px 18px;
   border: 2px solid transparent;
@@ -157,6 +207,7 @@
   box-shadow: var(--shadow);
   display: grid;
   gap: 16px;
+  align-self: start;
 }
 
 .cardHeader {
@@ -164,6 +215,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+
+.cardHeading {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .cardBadge {
@@ -181,8 +239,45 @@
   color: var(--ink);
 }
 
+.dispatchControls {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.dispatchButton {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(43, 26, 18, 0.28);
+  background: rgba(246, 232, 204, 0.75);
+  color: rgba(43, 26, 18, 0.85);
+  display: inline-grid;
+  place-items: center;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.dispatchButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(43, 26, 18, 0.2);
+  background: rgba(246, 232, 204, 0.95);
+}
+
+.dispatchButton:disabled {
+  opacity: 0.55;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
 .cardText {
   color: rgba(43, 26, 18, 0.8);
+}
+
+.cardSource {
+  font-size: 0.84rem;
+  color: rgba(43, 26, 18, 0.68);
 }
 
 .cardFooter {
@@ -205,9 +300,14 @@
   border: 1px solid rgba(180, 106, 60, 0.25);
   border-radius: 18px;
   padding: 18px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
   box-shadow: 0 12px 30px rgba(43, 26, 18, 0.15);
+}
+
+.menuCard :is(.primaryButton, .secondaryButton) {
+  margin-top: auto;
 }
 
 .menuCardLink {
@@ -246,19 +346,43 @@
     padding: 48px 72px 88px;
   }
 
-  .header {
-    flex-direction: row;
-    align-items: flex-end;
+  .titleRow {
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .brandTagline {
+    display: block;
+    text-align: right;
+    padding-top: 18px;
+  }
+
+  .menuToggle {
+    display: none;
   }
 
   .navList {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .navList li {
+    flex: 0 0 auto;
+  }
+
+  .nav {
+    display: block;
   }
 
   .hero {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
+    align-items: start;
   }
 
   .menuGrid {

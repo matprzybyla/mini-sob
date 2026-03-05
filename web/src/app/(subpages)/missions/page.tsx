@@ -161,17 +161,12 @@ export default function MissionsPage() {
 
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <div>
+      <header className="subpageTopRow">
+        <div className="subpageHeaderMain">
           <p className={styles.eyebrow}>Campaign Ledger</p>
-          <h1 className={styles.title}>Missions</h1>
-          <p className={styles.subtitle}>
-            A complete rundown of mission packs and special adjustments for the HexCrawl campaign.
-          </p>
+          <h2 className="subpageHeaderTitle">Missions</h2>
         </div>
-        <Link className={styles.backLink} href="/">
-          Back to Camp
-        </Link>
+        <Link className="subpageBackLink" href="/" aria-label="Back to Camp" title="Back to Camp" />
       </header>
 
       <section className={styles.randomBlock}>

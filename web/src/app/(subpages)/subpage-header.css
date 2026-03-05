@@ -1,0 +1,43 @@
+.subpageHeaderTitle {
+  font-family: var(--font-display), "Georgia", serif;
+}
+
+.subpageHeaderSubtitle {
+  color: rgba(43, 26, 18, 0.75);
+  max-width: 52ch;
+}
+
+.subpageTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.subpageHeaderMain {
+  min-width: 0;
+}
+
+.subpageBackLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 96px;
+  min-height: 52px;
+  padding: 0;
+  border: 0;
+  background: transparent url("/ui/back-sign.png") center / contain no-repeat;
+  box-shadow: none;
+  filter: drop-shadow(0 5px 10px rgba(43, 26, 18, 0.25));
+}
+
+.subpageBackLink:focus-visible,
+.subpageBackLink:hover {
+  transform: translateY(-1px);
+}
+
+.subpageBackLink:focus-visible {
+  outline: 2px solid rgba(43, 26, 18, 0.45);
+  outline-offset: 3px;
+}

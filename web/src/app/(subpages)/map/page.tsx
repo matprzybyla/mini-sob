@@ -18,19 +18,12 @@ export default function MapPage() {
 
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <div>
+      <header className="subpageTopRow">
+        <div className="subpageHeaderMain">
           <p className={styles.eyebrow}>Frontier Atlas</p>
-          <h1 className={styles.title}>Sunset Over Badlands Map</h1>
-          <p className={styles.subtitle}>
-            Pan with touch, scroll to explore, and zoom for close-up travel planning.
-          </p>
+          <h2 className="subpageHeaderTitle">Brimstone area map</h2>
         </div>
-        <div className={styles.headerActions}>
-          <Link className={styles.backLink} href="/">
-            Back to menu
-          </Link>
-        </div>
+        <Link className="subpageBackLink" href="/" aria-label="Back to Camp" title="Back to Camp" />
       </header>
 
       <section className={styles.controls} aria-label="Map controls">

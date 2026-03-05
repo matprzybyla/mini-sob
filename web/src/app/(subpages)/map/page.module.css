@@ -6,45 +6,12 @@
   gap: 24px;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 0.7rem;
   font-weight: 600;
   color: var(--copper);
-}
-
-.title {
-  font-family: var(--font-display), "Georgia", serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.1;
-}
-
-.subtitle {
-  color: rgba(43, 26, 18, 0.75);
-  max-width: 52ch;
-}
-
-.headerActions {
-  display: flex;
-  gap: 12px;
-}
-
-.backLink {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(43, 26, 18, 0.35);
-  background: rgba(246, 232, 204, 0.8);
-  font-weight: 600;
 }
 
 .controls {
@@ -117,12 +84,6 @@
 }
 
 @media (min-width: 900px) {
-  .header {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   .controls {
     flex-direction: row;
     align-items: center;

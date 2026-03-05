@@ -6,37 +6,12 @@
   gap: 24px;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--copper);
-}
-
-.title {
-  font-family: var(--font-display), "Georgia", serif;
-  font-size: clamp(2rem, 6vw, 3rem);
-}
-
-.subtitle {
-  color: rgba(43, 26, 18, 0.75);
-  max-width: 48ch;
-}
-
-.backLink {
-  align-self: flex-start;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(141, 63, 36, 0.4);
-  background: rgba(246, 232, 204, 0.85);
-  font-weight: 600;
 }
 
 .notice {
@@ -291,16 +266,6 @@
 @media (min-width: 720px) {
   .page {
     padding: 48px 72px 96px;
-  }
-
-  .header {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-
-  .backLink {
-    align-self: center;
   }
 
   .grid {
