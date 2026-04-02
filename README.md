@@ -12,3 +12,4 @@ Original HexCrawl campaign reference (source file):
 ## Contents
 - `Campaign.md`: core campaign notes and rules adjustments.
 
+Test Linear
