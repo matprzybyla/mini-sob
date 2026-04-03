@@ -1,0 +1,68 @@
+.page {
+  margin: 0 auto;
+  width: min(1040px, 100% - clamp(1.5rem, 4vw, 3rem));
+  padding: clamp(1.2rem, 3vw, 2rem) 0 clamp(2.5rem, 7vw, 4rem);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  background: color-mix(in srgb, var(--panel-bg) 92%, rgba(18, 9, 2, 0.55));
+  border: 1px solid color-mix(in srgb, var(--ink) 24%, transparent);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.25rem rgba(7, 4, 2, 0.22);
+  padding: clamp(1rem, 3vw, 1.4rem);
+}
+
+.section h1,
+.section h2 {
+  margin: 0;
+  color: color-mix(in srgb, var(--ink) 86%, #f6e7c2);
+}
+
+.section p {
+  margin: 0.55rem 0 0;
+}
+
+.grid {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  padding: 0.72rem;
+  border: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, rgba(18, 9, 2, 0.18) 50%, transparent);
+}
+
+.icon {
+  width: 2.2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #f8ecce;
+  background: radial-gradient(circle at 30% 25%, #855628, #3a220d 68%);
+  border: 1px solid color-mix(in srgb, #f2d7a0 25%, transparent);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.card p {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
