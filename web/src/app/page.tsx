@@ -189,6 +189,15 @@ export default function Home() {
                   </li>
                 );
               }
+              if (item === "Rules") {
+                return (
+                  <li key={item}>
+                    <Link className={styles.navLink} href="/reference" onClick={closeMobileMenu}>
+                      {item}
+                    </Link>
+                  </li>
+                );
+              }
 
               return (
                 <li key={item}>
@@ -278,6 +287,11 @@ export default function Home() {
                 {item === "Map" && (
                   <Link className={styles.secondaryButton} href="/map">
                     Open Map
+                  </Link>
+                )}
+                {item === "Rules" && (
+                  <Link className={styles.secondaryButton} href="/reference">
+                    Open Rules
                   </Link>
                 )}
               </>

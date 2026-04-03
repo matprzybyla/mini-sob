@@ -64,6 +64,15 @@ export default function SubpagesLayout({ children }: { children: ReactNode }) {
                   </li>
                 );
               }
+              if (item === "Rules") {
+                return (
+                  <li key={item}>
+                    <Link className={styles.navLink} href="/reference" onClick={closeMobileMenu}>
+                      {item}
+                    </Link>
+                  </li>
+                );
+              }
 
               return (
                 <li key={item}>
