@@ -31,6 +31,8 @@ There are no tests or frameworks in the repository currently. If tests are intro
 
 ## Commit & Pull Request Guidelines
 No Git history is available in this workspace, so commit conventions cannot be inferred. If you initialize Git, adopt a clear convention (for example, Conventional Commits) and document PR requirements such as linked issues and screenshots for map or UI changes.
+When implementation work is complete, automatically open a pull request (or PR metadata entry in the current toolchain) as part of the standard delivery flow.
+To open a real GitHub PR from this workspace, configure `origin` and set `GITHUB_TOKEN` and `GITHUB_REPO`, then run `scripts/open-pr.sh`.
 
 ## Security & Configuration Tips
 No runtime configuration is present. If Supabase or other credentials are introduced, store them in environment files (for example, `.env.local`) and never commit secrets.
