@@ -5,11 +5,37 @@
   --clay: #b46a3c;
   --copper: #8d3f24;
   --ink: #2b1a12;
+  --ink-rgb: 43, 26, 18;
   --sky: #8ab1b7;
   --sage: #7a8f6b;
   --sunset: #e4a05b;
   --brass: #c6a35a;
   --shadow: 0 20px 40px rgba(43, 26, 18, 0.2);
+
+  --page-background: radial-gradient(circle at top, #f8eed8 0%, var(--sand) 40%, #e7c79a 100%);
+  --theme-toggle-bg: rgba(246, 232, 204, 0.92);
+  --theme-toggle-border: rgba(141, 63, 36, 0.45);
+  --theme-toggle-text: var(--ink);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --sand: #1f1915;
+  --parchment: #2d241d;
+  --clay: #9f6c49;
+  --copper: #d0906c;
+  --ink: #f4ead9;
+  --ink-rgb: 244, 234, 217;
+  --sky: #6f9094;
+  --sage: #8ea581;
+  --sunset: #c78552;
+  --brass: #be9f62;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+
+  --page-background: radial-gradient(circle at top, #2a221b 0%, #1a1410 40%, #0f0c0a 100%);
+  --theme-toggle-bg: rgba(45, 36, 29, 0.92);
+  --theme-toggle-border: rgba(244, 234, 217, 0.3);
+  --theme-toggle-text: var(--ink);
 }
 
 * {
@@ -27,7 +53,7 @@ body {
 body {
   min-height: 100vh;
   color: var(--ink);
-  background: radial-gradient(circle at top, #f8eed8 0%, var(--sand) 40%, #e7c79a 100%);
+  background: var(--page-background);
   font-family: var(--font-body), "Times New Roman", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

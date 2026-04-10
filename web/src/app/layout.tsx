@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Alegreya, Rye } from "next/font/google";
 import "./globals.css";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const rye = Rye({
   variable: "--font-display",
@@ -25,9 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${rye.variable} ${alegreya.variable}`}>
         {children}
+        <ThemeToggle />
       </body>
     </html>
   );
