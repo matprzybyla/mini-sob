@@ -1,23 +1,32 @@
 .page {
-  margin: 0 auto;
-  width: min(1040px, 100% - clamp(1.5rem, 4vw, 3rem));
-  padding: clamp(1.2rem, 3vw, 2rem) 0 clamp(2.5rem, 7vw, 4rem);
-  display: grid;
-  gap: 1.5rem;
+  min-height: 100vh;
+  padding: 32px 20px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--copper);
 }
 
 .section {
-  background: color-mix(in srgb, var(--panel-bg) 92%, rgba(18, 9, 2, 0.55));
-  border: 1px solid color-mix(in srgb, var(--ink) 24%, transparent);
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1.25rem rgba(7, 4, 2, 0.22);
-  padding: clamp(1rem, 3vw, 1.4rem);
+  background: rgba(246, 232, 204, 0.88);
+  border: 1px solid rgba(180, 106, 60, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(43, 26, 18, 0.15);
+  padding: 18px;
 }
 
-.section h1,
 .section h2 {
   margin: 0;
-  color: color-mix(in srgb, var(--ink) 86%, #f6e7c2);
+  color: var(--ink);
+  font-family: var(--font-display), "Georgia", serif;
+  font-size: 1.15rem;
 }
 
 .section p {
@@ -65,4 +74,12 @@
   margin: 0.35rem 0 0;
   font-size: 0.92rem;
   line-height: 1.35;
+}
+
+@media (min-width: 720px) {
+  .page {
+    margin: 0 auto;
+    width: min(1040px, 100% - 6rem);
+    padding: 48px 0 96px;
+  }
 }
