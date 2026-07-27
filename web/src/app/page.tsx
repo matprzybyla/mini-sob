@@ -190,6 +190,16 @@ export default function Home() {
                 );
               }
 
+              if (item === "Rules") {
+                return (
+                  <li key={item}>
+                    <Link className={styles.navLink} href="/reference" onClick={closeMobileMenu}>
+                      {item}
+                    </Link>
+                  </li>
+                );
+              }
+
               return (
                 <li key={item}>
                   <a
@@ -261,7 +271,7 @@ export default function Home() {
                   {item === "Map" &&
                     "Open the hex map for travel planning, touch panning, and quick zoom."}
                   {item === "Rules" &&
-                    "Quick reference for core mechanics, travel, and frontier hazards."}
+                    "Quick reference for side bag tokens, condition markers, and enemy abilities."}
                   {item === "About" &&
                     "Meet the setting, tone, and safety tools shaping the campaign."}
                 </p>
@@ -278,6 +288,11 @@ export default function Home() {
                 {item === "Map" && (
                   <Link className={styles.secondaryButton} href="/map">
                     Open Map
+                  </Link>
+                )}
+                {item === "Rules" && (
+                  <Link className={styles.secondaryButton} href="/reference">
+                    Open Rules
                   </Link>
                 )}
               </>
