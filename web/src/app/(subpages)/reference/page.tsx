@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./page.module.css";
 
 type ReferenceItem = {
@@ -156,12 +157,13 @@ function ReferenceGrid({ items }: { items: ReferenceItem[] }) {
 export default function ReferencePage() {
   return (
     <main className={styles.page}>
-      <section className={styles.section}>
-        <h1>Lookup for Side Bag Tokens, Condition Markers, and Enemy Abilities</h1>
-        <p>
-          Quick lookup for Side Bag Tokens, Condition Markers, and Enemy Abilities.
-        </p>
-      </section>
+      <header className="subpageTopRow">
+        <div className="subpageHeaderMain">
+          <p className={styles.eyebrow}>Trail Handbook</p>
+          <h2 className="subpageHeaderTitle">Reference</h2>
+        </div>
+        <Link className="subpageBackLink" href="/" aria-label="Back to Camp" title="Back to Camp" />
+      </header>
 
       <section className={styles.section}>
         <h2>Side Bag Tokens</h2>

@@ -6,7 +6,7 @@ import { useState } from "react";
 import styles from "./layout.module.css";
 import "./subpage-header.css";
 
-const menuItems = ["Campaign", "Missions", "Map", "Rules", "About"];
+const menuItems = ["Campaign", "Missions", "Map", "Reference", "About"];
 
 export default function SubpagesLayout({ children }: { children: ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,7 +65,7 @@ export default function SubpagesLayout({ children }: { children: ReactNode }) {
                 );
               }
 
-              if (item === "Rules") {
+              if (item === "Reference") {
                 return (
                   <li key={item}>
                     <Link className={styles.navLink} href="/reference" onClick={closeMobileMenu}>

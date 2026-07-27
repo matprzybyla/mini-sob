@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
 
-const menuItems = ["Campaign", "Missions", "Map", "Rules", "About"];
+const menuItems = ["Campaign", "Missions", "Map", "Reference", "About"];
 const frontierTopics = [
   "Old West",
   "Cowboy",
@@ -190,7 +190,7 @@ export default function Home() {
                 );
               }
 
-              if (item === "Rules") {
+              if (item === "Reference") {
                 return (
                   <li key={item}>
                     <Link className={styles.navLink} href="/reference" onClick={closeMobileMenu}>
@@ -270,7 +270,7 @@ export default function Home() {
                     "Review open jobs, bounties, and side trails before the posse rides."}
                   {item === "Map" &&
                     "Open the hex map for travel planning, touch panning, and quick zoom."}
-                  {item === "Rules" &&
+                  {item === "Reference" &&
                     "Quick reference for side bag tokens, condition markers, and enemy abilities."}
                   {item === "About" &&
                     "Meet the setting, tone, and safety tools shaping the campaign."}
@@ -290,9 +290,9 @@ export default function Home() {
                     Open Map
                   </Link>
                 )}
-                {item === "Rules" && (
+                {item === "Reference" && (
                   <Link className={styles.secondaryButton} href="/reference">
-                    Open Rules
+                    Open Reference
                   </Link>
                 )}
               </>
